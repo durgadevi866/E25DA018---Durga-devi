@@ -1,0 +1,29 @@
+password = input("Enter your password: ")
+
+# Initialize conditions
+upper = lower = digit = special = length = 0
+
+# Check each condition
+for char in password:
+    if char.isupper():
+        upper = 1
+    elif char.islower():
+        lower = 1
+    elif char.isdigit():
+        digit = 1
+    else:
+        special = 1
+
+if len(password) >= 8:
+    length = 1
+
+# Count how many conditions are met
+total = upper + lower + digit + special + length
+
+# Determine strength
+if total == 5:
+    print("Strong")
+elif total == 4:
+    print("Moderate")
+else:
+    print("Weak")
